@@ -6,11 +6,4 @@ streamlit
 matplotlib
 seaborn
 joblib
-xgboost
-nbformat
-pulp
-torch
-pymoo
-scipy
-tqdm
-pygmo
+pyarrow
