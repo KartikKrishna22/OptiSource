@@ -1,0 +1,16 @@
+pandas
+numpy
+scikit-learn
+plotly
+streamlit
+matplotlib
+seaborn
+joblib
+xgboost
+nbformat
+pulp
+torch
+pymoo
+scipy
+tqdm
+pygmo
