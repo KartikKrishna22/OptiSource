@@ -1,19 +1,132 @@
-# OptiSource
-
-OptiSource is an interactive optimization dashboard for **Palm Oil Sourcing** that helps users explore sustainable sourcing scenarios based on precomputed optimization results. The app provides insights into cost, emissions, deforestation impact, and supplier allocation given user-selected parameters.
+# 🌴 OptiSource: Sustainable Palm Oil Sourcing Optimization Dashboard
 
 ---
 
-## 🔍 Project Overview
+## 📌 Overview
 
-Palm oil is a key agricultural commodity, but sourcing it sustainably is complex due to trade networks, environmental impact, and cost constraints. OptiSource allows users to:
+OptiSource is an interactive decision-support dashboard designed to optimize palm oil sourcing strategies while balancing:
 
-- Explore trade-off trade scenarios between cost, emissions, and deforestation risk.
-- Compare optimized sourcing plans against baseline sourcing.
-- Visualize supplier allocations based on selected constraints.
-- Download detailed results for further analysis.
+- 💰 Cost efficiency  
+- 🌱 Environmental sustainability  
+- 🌳 Deforestation risk reduction  
+- 📦 Supply reliability  
 
-The dashboard is built using **Streamlit** and visualizes precomputed results stored in CSV/JSON/Pickle files. :contentReference[oaicite:1]{index=1}
+The dashboard enables users to explore precomputed optimization scenarios and visualize optimal sourcing allocations using an intuitive Streamlit interface.
+
+This project demonstrates a real-world application of optimization, supply chain analytics, and sustainability-driven decision modeling.
+
+---
+
+## 🎯 Objectives
+
+The main goals of OptiSource are:
+
+- Optimize sourcing allocation across multiple suppliers
+- Minimize environmental and deforestation impact
+- Maintain supply constraints and sourcing feasibility
+- Provide transparent and interactive visualization
+- Enable scenario analysis for sustainability-focused sourcing
+
+---
+
+## 📊 Dataset
+
+This project uses the **Indonesian Palm Oil Supply Chain Dataset**.
+
+🔗 Kaggle Dataset:  
+https://www.kaggle.com/datasets/kartikkrishna22/indonesian-palm-oil-dataset
+
+### Dataset contains:
+
+- Exporter profiles
+- Supplier cost data
+- Emissions metrics
+- Deforestation risk indicators
+- Trade flow and sourcing information
+- Optimization-ready structured supply chain data
+
+### Why hosted on Kaggle?
+
+The full dataset exceeds GitHub's file size limits. Therefore:
+
+- Full dataset → Kaggle
+- Precomputed results → GitHub
+- Visualization → Streamlit
+
+This follows industry best practices.
+
+---
+
+## 🧠 Methodology
+
+The optimization pipeline follows these steps:
+
+### Step 1: Data Preparation
+- Clean exporter and sourcing data
+- Normalize cost and sustainability metrics
+- Structure data for optimization modeling
+
+### Step 2: Optimization Modeling
+Multi-objective optimization considers:
+
+- Cost minimization
+- Emissions reduction
+- Deforestation risk reduction
+- Supply constraints
+- Supplier allocation limits
+
+Optimization performed offline using advanced optimization algorithms.
+
+### Step 3: Precomputation
+Optimization results are precomputed and stored as:
+precomputed_results/
+├── precomputed_scenarios_summary.csv
+├── precomputed_detailed_results.json
+├── precomputed_metadata.pkl
+
+
+This ensures fast Streamlit performance.
+
+### Step 4: Visualization Dashboard
+Streamlit dashboard loads precomputed results and provides:
+
+- Interactive scenario exploration
+- Allocation visualization
+- Cost vs sustainability comparison
+- Downloadable sourcing results
+
+---
+
+## 🚀 Live Streamlit App
+
+Access the live dashboard here:
+
+https://optisource-8klpinioxlhsg3pkrwhtky.streamlit.app/
+
+---
+
+## 🖥 Features
+
+### Interactive controls
+Users can adjust:
+
+- Required sourcing volume
+- Risk weight preference
+- Supplier limits
+- Sustainability priorities
+
+### Visual analytics
+
+The dashboard provides:
+
+- Supplier allocation charts
+- Cost comparisons
+- Emissions impact visualization
+- Deforestation risk comparison
+
+### Export functionality
+
+Users can download optimized sourcing results for further analysis.
 
 ---
 
@@ -21,55 +134,28 @@ The dashboard is built using **Streamlit** and visualizes precomputed results st
 OptiSource/
 │
 ├── app.py
+├── requirements.txt
+├── README.md
+│
 ├── precomputed_results/
 │ ├── precomputed_scenarios_summary.csv
 │ ├── precomputed_detailed_results.json
-│ ├── precomputed_metadata.pkl
-│ └── precomputed_supplier_allocations.parquet (optional)
+│ └── precomputed_metadata.pkl
+│
+├── notebooks/
+│ ├── model.ipynb
+│ ├── model-new.ipynb
+│ └── optimal_sourcing_7_model_ablation.ipynb
+│
 ├── final_exporter_profiles.csv
-├── strict_7_model_results_final.csv
-├── model-new.ipynb
-├── model.ipynb
-├── optimal_sourcing_7_model_ablation.ipynb
-├── requirements.txt
-├── LICENSE
-└── README.md
+└── strict_7_model_results_final.csv
 
 
 ---
 
-## 📌 Key Components
+## ⚙️ Installation (Local)
 
-### 🧠 Streamlit App (`app.py`)
-This is the main dashboard that allows users to interactively select parameters such as:
-- Volume required (tonnes)
-- Sustainability risk weight
-- Max share per supplier
-- Minimum number of suppliers
-
-The app then displays:
-- Cost, emissions, deforestation comparisons
-- Supplier allocation charts
-- Detailed supplier information with export options to CSV :contentReference[oaicite:2]{index=2}
-
----
-
-## 📊 Precomputed Data (`precomputed_results/`)
-
-To ensure fast, responsive interaction, all optimization results are precomputed offline and stored in the `precomputed_results/` folder. These include:
-
-- **precomputed_scenarios_summary.csv** – Summary of all scenarios
-- **precomputed_detailed_results.json** – Detailed optimization outcomes
-- **precomputed_metadata.pkl** – Metadata for results
-- **precomputed_supplier_allocations.parquet** – Supplier allocation dataset (optional)
-
-These files power the dashboards without heavy runtime computations. :contentReference[oaicite:3]{index=3}
-
----
-
-## 🛠 Installation
-
-### 💾 Clone the Repository
+### Clone repository
 
 ```bash
 git clone https://github.com/KartikKrishna22/OptiSource.git
