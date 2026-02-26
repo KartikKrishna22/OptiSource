@@ -7,4 +7,5 @@ matplotlib
 seaborn
 joblib
 pyarrow
-altair
+altair==5.3.0
+
